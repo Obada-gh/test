@@ -1,0 +1,47 @@
+1-create files:
+   A)github repo
+
+   B)npm init -y
+
+   C)npm i express dotenv cors superagent ejs pg method-override (deecspm)
+
+   D)sql file and .env file ejson file
+
+2-connect the files
+00-'usestrict'
+AA-require 5-1
+   
+
+   require('dotenv').config();
+
+  
+   const express = require('express') ; 
+   const superagent = require('superagent'); 
+   const cors = require('cors'); 
+   const methodOverride = require(method-override);
+#    const expressLayouts = require('express-ejs-layouts');
+   const pg=require('pg');
+
+bb-use
+
+    A- 3-2
+const app = express(); 
+app.use('cors()');
+app.use('methodOverride(_method)');
+app.use(express.static('./public'));
+# app.use(expressLayouts);
+app.set('viwe engine','ejs');
+
+   B-client pg 2-c
+   const client = new pg.Client(process.env.DB_URL);
+   const PORT = process.env.PORT || 4050;
+
+   client.connect().then(()=>{
+       app.listen(PORT,()=>{
+           console.log(`i am on ${PORT}`)
+       })
+   })
+
+
+
+
