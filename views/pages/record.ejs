@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <% records.forEach(element => { %>
+<form action="/details/<%= element.id %>" method="GET">
+    
+
+        
+        <p><%=element.country%> </p>
+        <p><%=element.totalconfirmed  %> </p>
+        <p><%=element.totaldeaths %> </p>
+        <p><%=element.totalrecovered %> </p>
+        <p><%=element.dates %> </p>
+        <button>ditals</button>
+  
+ 
+
+</form>
+<% }) %>
+</body>
+</html>

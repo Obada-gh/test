@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <p><%=sdetails.country%> </p>
+    <p><%=sdetails.totalconfirmed %> </p>
+    <p><%=sdetails.totaldeaths%> </p>
+    <p><%=sdetails.totalrecovered%> </p>
+    <p><%=sdetails.date %> </p>
+    <form action="/update/<%= sdetails.id %>?_method=put " method="POST">
+        <label for="">country</label>
+        <input type="text" name="country">
+        <label for="">totalconfirmed</label>
+        <input type="text" name="totalconfirmed">
+        <label for="">totaldeaths</label>
+        <input type="text" name="totaldeaths">
+        <label for="">totalrecovered</label>
+        <input type="text" name="totalrecovered">
+        <label for="">date</label>
+        <input type="text" name="date">
+        <button>update</button>
+    </form>
+    <form action="/delete/<% sdetails.id %>?_method=delete " method="POST">
+        <button>delete</button>
+    </form>
+</body>
+</html>
