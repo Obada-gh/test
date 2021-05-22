@@ -19,17 +19,16 @@ AA-require 5-1
    const superagent = require('superagent'); 
    const cors = require('cors'); 
    const methodOverride = require(method-override);
-#    const expressLayouts = require('express-ejs-layouts');
    const pg=require('pg');
 
 bb-use
 
-    A- 3-2
+    A- 4-2
 const app = express(); 
 app.use('cors()');
 app.use('methodOverride(_method)');
 app.use(express.static('./public'));
-# app.use(expressLayouts);
+app.use(express.urlencoded({extended:true})); //post method
 app.set('viwe engine','ejs');
 
    B-client pg 2-c
@@ -41,6 +40,29 @@ app.set('viwe engine','ejs');
            console.log(`i am on ${PORT}`)
        })
    })
+------------------------------------------------------------------
+'UPDATE records SET country=$1,totalconfirmed=$2,totaldeaths=$3,totalrecovered=$4,dates=$5 WHERE id=$6;';
+app.put('/update/:id',(req,res)=>
+app.delete('/delete/:id',(req,res)=>
+app.get('/details/:id',(req,res)=>
+app.get method let { country, date1, date2 } = req.query; // req query with names in git;
+superagent(url).then((data)=>{
+   let summary = data.body
+let sql = 'INSERT INTO records (country,totalconfirmed,totaldeaths,totalrecovered,dates) VALUES ($1,$2,$3,$4,$5) RETURNING *;'
+let sql = 'SELECT * FROM records;';
+app.get('/details/:id',(req,res)=>{
+   let sql = `SELECT * FROM records WHERE id=${req.params.id};`;
+
+app.delete('/delete/:id',(req,res)=>{
+      let sql = 'DELETE FROM records WHERE id=$1';
+
+      //button to add in allcountry//form hidden//post method//query
+      app.post('/addtomyrecords',(req,res)=>
+
+
+
+
+
 
 
 

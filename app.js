@@ -20,10 +20,9 @@ const PORT = process.env.PORT;
 
 client.connect().then(()=>{
   app.listen(PORT,()=>{
-    console.log(`i am on port ${PORT}` );
+    console.log(`i am on ${PORT}`);
   });
 });
-
 
 app.get('/',(req,res)=>{
   let url = 'https://api.covid19api.com/world/total';
@@ -33,6 +32,7 @@ app.get('/',(req,res)=>{
   });
 
 });
+
 
 app.get('/getCountryRes',(req,res)=>{
   let { country, date1, date2 } = req.query; // req query with names;
@@ -88,7 +88,6 @@ app.get('/records',(req,res)=>{
   let sql = 'SELECT * FROM records;';
   client.query(sql).then((data)=>{
     return res.render('pages/record',{records:data.rows});
-
   });
 });
 //WHERE ID inside the form and the roots

@@ -5,15 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="/style.css">
 </head>
 <body>
     <% countries.forEach(element => { %>
 
-        <p><%=element.country%> </p>
-        <p><%=element.totalconfirmed%> </p>
-        <p><%=element.totaldeaths%> </p>
-        <p><%=element.totalrecovered%> </p>
-        <p><%=element.dates%> </p>
+        <p>country: <%=element.country%> </p>
+        <p>totalconfirmed:<%=element.totalconfirmed%> </p>
+        <p>totaldeaths: <%=element.totaldeaths%> </p>
+        <p>totalrecovered: <%=element.totalrecovered%> </p>
+        <p>dates: <%=element.dates%> </p>
 
         <form action="/addtomyrecords" method="POST">
             <input type="hidden" name="country" value="<%=element.country%>">
