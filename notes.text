@@ -3,7 +3,7 @@
 
    B)npm init -y
 
-   C)npm i express dotenv cors superagent ejs pg method-override (deecspm)
+   C)npm i express dotenv cors superagent ejs pg method-override (deecspm)7
 
    D)sql file and .env file ejson file
 
@@ -41,6 +41,7 @@ app.set('viwe engine','ejs');
        })
    })
 ------------------------------------------------------------------
+psql -f 
 'UPDATE records SET country=$1,totalconfirmed=$2,totaldeaths=$3,totalrecovered=$4,dates=$5 WHERE id=$6;';
 app.put('/update/:id',(req,res)=>
 app.delete('/delete/:id',(req,res)=>
@@ -58,6 +59,14 @@ app.delete('/delete/:id',(req,res)=>{
 
       //button to add in allcountry//form hidden//post method//query
       app.post('/addtomyrecords',(req,res)=>
+-------------------------------------------------------------
+errors
+name of app.js
+client syntics
+=ejs
+psql -f test.sql -a testt1
+
+PGSSLMODE no-verify
 
 
 
